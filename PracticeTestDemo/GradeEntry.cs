@@ -16,5 +16,20 @@ namespace PracticeTestDemo
         {
             InitializeComponent();
         }
+
+        private void stud_gradesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.stud_gradesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.practiceDB23DataSet);
+
+        }
+
+        private void GradeEntry_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'practiceDB23DataSet.Stud_grades' table. You can move, or remove it, as needed.
+            this.stud_gradesTableAdapter.Fill(this.practiceDB23DataSet.Stud_grades);
+
+        }
     }
 }
