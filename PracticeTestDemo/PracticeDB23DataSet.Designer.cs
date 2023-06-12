@@ -389,10 +389,10 @@ namespace PracticeTestDemo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Stud_gradesRow AddStud_gradesRow(int student_id, string course_name, System.DateTime date_submitted, decimal grade) {
+            public Stud_gradesRow AddStud_gradesRow(string course_name, System.DateTime date_submitted, decimal grade) {
                 Stud_gradesRow rowStud_gradesRow = ((Stud_gradesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        student_id,
+                        null,
                         course_name,
                         date_submitted,
                         grade};
@@ -444,6 +444,8 @@ namespace PracticeTestDemo {
                 base.Columns.Add(this.columngrade);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnstudent_id}, true));
+                this.columnstudent_id.AutoIncrement = true;
+                this.columnstudent_id.AutoIncrementSeed = 1001;
                 this.columnstudent_id.AllowDBNull = false;
                 this.columnstudent_id.Unique = true;
                 this.columncourse_name.AllowDBNull = false;
@@ -909,8 +911,13 @@ SELECT student_id, course_name, date_submitted, grade FROM Stud_grades WHERE (st
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_student_id, string Original_course_name, System.DateTime Original_date_submitted, decimal Original_grade) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_student_id));
+        public virtual int Delete(global::System.Nullable<int> Original_student_id, string Original_course_name, System.DateTime Original_date_submitted, decimal Original_grade) {
+            if ((Original_student_id.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_student_id.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Original_course_name == null)) {
                 throw new global::System.ArgumentNullException("Original_course_name");
             }
@@ -939,8 +946,13 @@ SELECT student_id, course_name, date_submitted, grade FROM Stud_grades WHERE (st
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int student_id, string course_name, System.DateTime date_submitted, decimal grade) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(student_id));
+        public virtual int Insert(global::System.Nullable<int> student_id, string course_name, System.DateTime date_submitted, decimal grade) {
+            if ((student_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(student_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((course_name == null)) {
                 throw new global::System.ArgumentNullException("course_name");
             }
@@ -969,8 +981,13 @@ SELECT student_id, course_name, date_submitted, grade FROM Stud_grades WHERE (st
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int student_id, string course_name, System.DateTime date_submitted, decimal grade, int Original_student_id, string Original_course_name, System.DateTime Original_date_submitted, decimal Original_grade) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(student_id));
+        public virtual int Update(global::System.Nullable<int> student_id, string course_name, System.DateTime date_submitted, decimal grade, global::System.Nullable<int> Original_student_id, string Original_course_name, System.DateTime Original_date_submitted, decimal Original_grade) {
+            if ((student_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(student_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((course_name == null)) {
                 throw new global::System.ArgumentNullException("course_name");
             }
@@ -979,7 +996,12 @@ SELECT student_id, course_name, date_submitted, grade FROM Stud_grades WHERE (st
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(date_submitted));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(grade));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_student_id));
+            if ((Original_student_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_student_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((Original_course_name == null)) {
                 throw new global::System.ArgumentNullException("Original_course_name");
             }
@@ -1008,7 +1030,7 @@ SELECT student_id, course_name, date_submitted, grade FROM Stud_grades WHERE (st
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string course_name, System.DateTime date_submitted, decimal grade, int Original_student_id, string Original_course_name, System.DateTime Original_date_submitted, decimal Original_grade) {
+        public virtual int Update(string course_name, System.DateTime date_submitted, decimal grade, global::System.Nullable<int> Original_student_id, string Original_course_name, System.DateTime Original_date_submitted, decimal Original_grade) {
             return this.Update(Original_student_id, course_name, date_submitted, grade, Original_student_id, Original_course_name, Original_date_submitted, Original_grade);
         }
     }

@@ -43,10 +43,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.practiceDB23DataSet = new PracticeTestDemo.PracticeDB23DataSet();
-            this.stud_gradesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stud_gradesTableAdapter = new PracticeTestDemo.PracticeDB23DataSetTableAdapters.Stud_gradesTableAdapter();
-            this.tableAdapterManager = new PracticeTestDemo.PracticeDB23DataSetTableAdapters.TableAdapterManager();
             this.stud_gradesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -65,11 +61,15 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.practiceDB23DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingSource)).BeginInit();
+            this.stud_gradesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.practiceDB23DataSet = new PracticeTestDemo.PracticeDB23DataSet();
+            this.stud_gradesTableAdapter = new PracticeTestDemo.PracticeDB23DataSetTableAdapters.Stud_gradesTableAdapter();
+            this.tableAdapterManager = new PracticeTestDemo.PracticeDB23DataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingNavigator)).BeginInit();
             this.stud_gradesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.practiceDB23DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -148,9 +148,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label5.Location = new System.Drawing.Point(697, 57);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "(yyyy-mm-dd)";
+            this.label5.Text = "(mm/dd/yyyy)";
             // 
             // label6
             // 
@@ -182,6 +182,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -192,26 +193,7 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Refresh";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // practiceDB23DataSet
-            // 
-            this.practiceDB23DataSet.DataSetName = "PracticeDB23DataSet";
-            this.practiceDB23DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stud_gradesBindingSource
-            // 
-            this.stud_gradesBindingSource.DataMember = "Stud_grades";
-            this.stud_gradesBindingSource.DataSource = this.practiceDB23DataSet;
-            // 
-            // stud_gradesTableAdapter
-            // 
-            this.stud_gradesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Stud_gradesTableAdapter = this.stud_gradesTableAdapter;
-            this.tableAdapterManager.UpdateOrder = PracticeTestDemo.PracticeDB23DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // stud_gradesBindingNavigator
             // 
@@ -270,6 +252,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -278,14 +261,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -293,7 +276,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -302,13 +285,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -325,7 +308,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // stud_gradesBindingNavigatorSaveItem
@@ -333,7 +316,7 @@
             this.stud_gradesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.stud_gradesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("stud_gradesBindingNavigatorSaveItem.Image")));
             this.stud_gradesBindingNavigatorSaveItem.Name = "stud_gradesBindingNavigatorSaveItem";
-            this.stud_gradesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.stud_gradesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.stud_gradesBindingNavigatorSaveItem.Text = "Save Data";
             this.stud_gradesBindingNavigatorSaveItem.Click += new System.EventHandler(this.stud_gradesBindingNavigatorSaveItem_Click);
             // 
@@ -376,6 +359,26 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "grade";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
+            // stud_gradesBindingSource
+            // 
+            this.stud_gradesBindingSource.DataMember = "Stud_grades";
+            this.stud_gradesBindingSource.DataSource = this.practiceDB23DataSet;
+            // 
+            // practiceDB23DataSet
+            // 
+            this.practiceDB23DataSet.DataSetName = "PracticeDB23DataSet";
+            this.practiceDB23DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stud_gradesTableAdapter
+            // 
+            this.stud_gradesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Stud_gradesTableAdapter = this.stud_gradesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = PracticeTestDemo.PracticeDB23DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // GradeEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,12 +402,12 @@
             this.Name = "GradeEntry";
             this.Text = "Grade Entry";
             this.Load += new System.EventHandler(this.GradeEntry_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.practiceDB23DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingNavigator)).EndInit();
             this.stud_gradesBindingNavigator.ResumeLayout(false);
             this.stud_gradesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.practiceDB23DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
