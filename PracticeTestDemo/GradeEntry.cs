@@ -38,6 +38,18 @@ namespace PracticeTestDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int[] studGrades = new int[stud_gradesDataGridView.Rows.Count];
+            conn.Open();
+            string query = "Select grade from Stud_grades";
+            SqlDataReader dr = new SqlDataReader.Read(query, conn);
+            da.F
+            //[] data = new decimal[10];
+            //da.Fill(studGrades);
+            conn.Close();
+
+            //dataGridView1.DataSource = data.Tables[0];
+
+            MessageBox.Show("Awesome Job");
 
         }
 
@@ -45,11 +57,11 @@ namespace PracticeTestDemo
         {
             conn.Open();
 
-            DateTime date_obj = Convert.ToDateTime(textBox4.Text);
+            //DateTime date_obj = Convert.ToDateTime(textBox4.Text);
 
             Decimal grade_obj = Convert.ToDecimal(textBox3.Text);
 
-            string comm = "Insert into Stud_grades values ( 1001,'" + textBox2.Text + "','" + date_obj + "','" + grade_obj + "')";
+            string comm = "Insert into Stud_grades values ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox4.Text + "','" + grade_obj + "')";
             SqlCommand objcomm = new SqlCommand(comm, conn);
             objcomm.ExecuteNonQuery();
             conn.Close();

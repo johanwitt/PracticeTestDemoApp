@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetAve.cs" />
     <Compile Include="GradeEntry.cs">
       <SubType>Form</SubType>
     </Compile>

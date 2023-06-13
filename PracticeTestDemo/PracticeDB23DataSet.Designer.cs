@@ -389,10 +389,10 @@ namespace PracticeTestDemo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Stud_gradesRow AddStud_gradesRow(string course_name, System.DateTime date_submitted, decimal grade) {
+            public Stud_gradesRow AddStud_gradesRow(string student_id, string course_name, string date_submitted, decimal grade) {
                 Stud_gradesRow rowStud_gradesRow = ((Stud_gradesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        student_id,
                         course_name,
                         date_submitted,
                         grade};
@@ -403,7 +403,7 @@ namespace PracticeTestDemo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Stud_gradesRow FindBystudent_id(int student_id) {
+            public Stud_gradesRow FindBystudent_id(string student_id) {
                 return ((Stud_gradesRow)(this.Rows.Find(new object[] {
                             student_id})));
             }
@@ -434,17 +434,16 @@ namespace PracticeTestDemo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnstudent_id = new global::System.Data.DataColumn("student_id", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnstudent_id = new global::System.Data.DataColumn("student_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstudent_id);
                 this.columncourse_name = new global::System.Data.DataColumn("course_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncourse_name);
-                this.columndate_submitted = new global::System.Data.DataColumn("date_submitted", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columndate_submitted = new global::System.Data.DataColumn("date_submitted", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate_submitted);
                 this.columngrade = new global::System.Data.DataColumn("grade", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngrade);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnstudent_id}, true));
-                this.columnstudent_id.AutoIncrement = true;
                 this.columnstudent_id.AutoIncrementSeed = 1001;
                 this.columnstudent_id.AllowDBNull = false;
                 this.columnstudent_id.Unique = true;
@@ -594,9 +593,9 @@ namespace PracticeTestDemo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int student_id {
+            public string student_id {
                 get {
-                    return ((int)(this[this.tableStud_grades.student_idColumn]));
+                    return ((string)(this[this.tableStud_grades.student_idColumn]));
                 }
                 set {
                     this[this.tableStud_grades.student_idColumn] = value;
@@ -616,9 +615,9 @@ namespace PracticeTestDemo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime date_submitted {
+            public string date_submitted {
                 get {
-                    return ((global::System.DateTime)(this[this.tableStud_grades.date_submittedColumn]));
+                    return ((string)(this[this.tableStud_grades.date_submittedColumn]));
                 }
                 set {
                     this[this.tableStud_grades.date_submittedColumn] = value;

@@ -76,7 +76,7 @@ SELECT student_id, course_name, date_submitted, grade FROM Stud_grades WHERE (st
         <xs:element name="Stud_grades" msprop:Generator_RowEvHandlerName="Stud_gradesRowChangeEventHandler" msprop:Generator_RowDeletedName="Stud_gradesRowDeleted" msprop:Generator_RowDeletingName="Stud_gradesRowDeleting" msprop:Generator_RowEvArgName="Stud_gradesRowChangeEvent" msprop:Generator_TablePropName="Stud_grades" msprop:Generator_RowChangedName="Stud_gradesRowChanged" msprop:Generator_UserTableName="Stud_grades" msprop:Generator_RowChangingName="Stud_gradesRowChanging" msprop:Generator_RowClassName="Stud_gradesRow" msprop:Generator_TableClassName="Stud_gradesDataTable" msprop:Generator_TableVarName="tableStud_grades">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="student_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1001" msprop:Generator_ColumnPropNameInTable="student_idColumn" msprop:Generator_ColumnPropNameInRow="student_id" msprop:Generator_UserColumnName="student_id" msprop:Generator_ColumnVarNameInTable="columnstudent_id" type="xs:int" minOccurs="0" />
+              <xs:element name="student_id" msdata:AutoIncrementSeed="1001" msprop:Generator_ColumnPropNameInTable="student_idColumn" msprop:Generator_ColumnPropNameInRow="student_id" msprop:Generator_UserColumnName="student_id" msprop:Generator_ColumnVarNameInTable="columnstudent_id" type="xs:string" minOccurs="0" />
               <xs:element name="course_name" msprop:Generator_ColumnPropNameInTable="course_nameColumn" msprop:Generator_ColumnPropNameInRow="course_name" msprop:Generator_UserColumnName="course_name" msprop:Generator_ColumnVarNameInTable="columncourse_name">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -84,7 +84,7 @@ SELECT student_id, course_name, date_submitted, grade FROM Stud_grades WHERE (st
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="date_submitted" msprop:Generator_ColumnPropNameInTable="date_submittedColumn" msprop:Generator_ColumnPropNameInRow="date_submitted" msprop:Generator_UserColumnName="date_submitted" msprop:Generator_ColumnVarNameInTable="columndate_submitted" type="xs:dateTime" />
+              <xs:element name="date_submitted" msprop:Generator_ColumnPropNameInTable="date_submittedColumn" msprop:Generator_ColumnPropNameInRow="date_submitted" msprop:Generator_UserColumnName="date_submitted" msprop:Generator_ColumnVarNameInTable="columndate_submitted" type="xs:string" />
               <xs:element name="grade" msprop:Generator_ColumnPropNameInTable="gradeColumn" msprop:Generator_ColumnPropNameInRow="grade" msprop:Generator_UserColumnName="grade" msprop:Generator_ColumnVarNameInTable="columngrade" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>

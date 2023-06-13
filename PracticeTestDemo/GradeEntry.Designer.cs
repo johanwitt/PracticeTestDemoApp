@@ -44,32 +44,32 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.stud_gradesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.stud_gradesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.practiceDB23DataSet = new PracticeTestDemo.PracticeDB23DataSet();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.stud_gradesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.stud_gradesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stud_gradesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.practiceDB23DataSet = new PracticeTestDemo.PracticeDB23DataSet();
             this.stud_gradesTableAdapter = new PracticeTestDemo.PracticeDB23DataSetTableAdapters.Stud_gradesTableAdapter();
             this.tableAdapterManager = new PracticeTestDemo.PracticeDB23DataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingNavigator)).BeginInit();
             this.stud_gradesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stud_gradesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.practiceDB23DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stud_gradesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -191,7 +191,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(168, 37);
             this.button2.TabIndex = 12;
-            this.button2.Text = "Refresh";
+            this.button2.Text = "Average";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -224,6 +224,41 @@
             this.stud_gradesBindingNavigator.Size = new System.Drawing.Size(800, 25);
             this.stud_gradesBindingNavigator.TabIndex = 13;
             this.stud_gradesBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // stud_gradesBindingSource
+            // 
+            this.stud_gradesBindingSource.DataMember = "Stud_grades";
+            this.stud_gradesBindingSource.DataSource = this.practiceDB23DataSet;
+            // 
+            // practiceDB23DataSet
+            // 
+            this.practiceDB23DataSet.DataSetName = "PracticeDB23DataSet";
+            this.practiceDB23DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -258,16 +293,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -290,26 +318,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // stud_gradesBindingNavigatorSaveItem
             // 
@@ -359,16 +369,6 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "grade";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // stud_gradesBindingSource
-            // 
-            this.stud_gradesBindingSource.DataMember = "Stud_grades";
-            this.stud_gradesBindingSource.DataSource = this.practiceDB23DataSet;
-            // 
-            // practiceDB23DataSet
-            // 
-            this.practiceDB23DataSet.DataSetName = "PracticeDB23DataSet";
-            this.practiceDB23DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // stud_gradesTableAdapter
             // 
             this.stud_gradesTableAdapter.ClearBeforeFill = true;
@@ -405,9 +405,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingNavigator)).EndInit();
             this.stud_gradesBindingNavigator.ResumeLayout(false);
             this.stud_gradesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stud_gradesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.practiceDB23DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stud_gradesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
