@@ -38,18 +38,17 @@ namespace PracticeTestDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int[] studGrades = new int[stud_gradesDataGridView.Rows.Count];
-            conn.Open();
-            string query = "Select grade from Stud_grades";
-            SqlDataReader dr = new SqlDataReader.Read(query, conn);
-            da.F
-            //[] data = new decimal[10];
-            //da.Fill(studGrades);
-            conn.Close();
+            decimal[] studGrades = new decimal[stud_gradesDataGridView.Rows.Count];
+            
 
-            //dataGridView1.DataSource = data.Tables[0];
+            for (int i = 0; i < stud_gradesDataGridView.Rows.Count-1; i++)
+            {
+                studGrades[i] = Convert.ToDecimal(stud_gradesDataGridView[3, i]);
+            }
 
-            MessageBox.Show("Awesome Job");
+            decimal ave = GetAve.getAve(studGrades);
+
+            MessageBox.Show("The Average Grade is: " + ave);
 
         }
 
