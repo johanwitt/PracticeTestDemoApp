@@ -69,5 +69,20 @@ namespace PracticeTestDemo
             MessageBox.Show("Data entry successful");
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "Select * from Stud_grades where grade = 99.99";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataSet data = new DataSet();
+            da.Fill(data);
+            conn.Close();
+
+            dataGridView1.DataSource = data.Tables[0];
+
+            MessageBox.Show("Awesome Job");
+
+        }
     }
 }

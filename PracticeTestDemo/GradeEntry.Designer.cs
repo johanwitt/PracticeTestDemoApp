@@ -65,11 +65,18 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stud_gradesTableAdapter = new PracticeTestDemo.PracticeDB23DataSetTableAdapters.Stud_gradesTableAdapter();
             this.tableAdapterManager = new PracticeTestDemo.PracticeDB23DataSetTableAdapters.TableAdapterManager();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datesubmittedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingNavigator)).BeginInit();
             this.stud_gradesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.practiceDB23DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -221,7 +228,7 @@
             this.stud_gradesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stud_gradesBindingNavigator.Name = "stud_gradesBindingNavigator";
             this.stud_gradesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stud_gradesBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.stud_gradesBindingNavigator.Size = new System.Drawing.Size(932, 25);
             this.stud_gradesBindingNavigator.TabIndex = 13;
             this.stud_gradesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -379,11 +386,62 @@
             this.tableAdapterManager.Stud_gradesTableAdapter = this.stud_gradesTableAdapter;
             this.tableAdapterManager.UpdateOrder = PracticeTestDemo.PracticeDB23DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.studentidDataGridViewTextBoxColumn,
+            this.coursenameDataGridViewTextBoxColumn,
+            this.datesubmittedDataGridViewTextBoxColumn,
+            this.gradeDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.stud_gradesBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(167, 545);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(443, 200);
+            this.dataGridView1.TabIndex = 15;
+            // 
+            // studentidDataGridViewTextBoxColumn
+            // 
+            this.studentidDataGridViewTextBoxColumn.DataPropertyName = "student_id";
+            this.studentidDataGridViewTextBoxColumn.HeaderText = "student_id";
+            this.studentidDataGridViewTextBoxColumn.Name = "studentidDataGridViewTextBoxColumn";
+            // 
+            // coursenameDataGridViewTextBoxColumn
+            // 
+            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "course_name";
+            this.coursenameDataGridViewTextBoxColumn.HeaderText = "course_name";
+            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
+            // 
+            // datesubmittedDataGridViewTextBoxColumn
+            // 
+            this.datesubmittedDataGridViewTextBoxColumn.DataPropertyName = "date_submitted";
+            this.datesubmittedDataGridViewTextBoxColumn.HeaderText = "date_submitted";
+            this.datesubmittedDataGridViewTextBoxColumn.Name = "datesubmittedDataGridViewTextBoxColumn";
+            // 
+            // gradeDataGridViewTextBoxColumn
+            // 
+            this.gradeDataGridViewTextBoxColumn.DataPropertyName = "grade";
+            this.gradeDataGridViewTextBoxColumn.HeaderText = "grade";
+            this.gradeDataGridViewTextBoxColumn.Name = "gradeDataGridViewTextBoxColumn";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(657, 625);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(150, 38);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Select";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // GradeEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 508);
+            this.ClientSize = new System.Drawing.Size(932, 757);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.stud_gradesDataGridView);
             this.Controls.Add(this.stud_gradesBindingNavigator);
             this.Controls.Add(this.button2);
@@ -408,6 +466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.practiceDB23DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stud_gradesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,6 +509,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coursenameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datesubmittedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gradeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button3;
     }
 }
 
