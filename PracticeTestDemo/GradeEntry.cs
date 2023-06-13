@@ -43,7 +43,7 @@ namespace PracticeTestDemo
 
             for (int i = 0; i < stud_gradesDataGridView.Rows.Count-1; i++)
             {
-                studGrades[i] = Convert.ToDecimal(stud_gradesDataGridView[3, i].Value.ToString());
+                studGrades[i] = Convert.ToDecimal(stud_gradesDataGridView[3, i].Value.ToString()); // how to index the gridview
             }
 
             decimal ave = GetAve.getAve(studGrades);
