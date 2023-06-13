@@ -43,10 +43,12 @@ namespace PracticeTestDemo
 
             for (int i = 0; i < stud_gradesDataGridView.Rows.Count-1; i++)
             {
-                studGrades[i] = Convert.ToDecimal(stud_gradesDataGridView[3, i]);
+                studGrades[i] = Convert.ToDecimal(stud_gradesDataGridView[3, i].Value.ToString());
             }
 
             decimal ave = GetAve.getAve(studGrades);
+
+            //Console.WriteLine(studGrades);
 
             MessageBox.Show("The Average Grade is: " + ave);
 
